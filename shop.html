@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表 | Luxe Désir</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .shop-header {
+            background-color: var(--white);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .shop-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .shop-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .sort-select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            background-color: var(--white);
+            font-family: inherit;
+        }
+        
+        .filter-sidebar {
+            width: 250px;
+            padding-right: 30px;
+        }
+        
+        .filter-section {
+            margin-bottom: 30px;
+        }
+        
+        .filter-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .filter-options {
+            list-style: none;
+        }
+        
+        .filter-options li {
+            margin-bottom: 10px;
+        }
+        
+        .filter-options label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .filter-options input {
+            margin-right: 10px;
+        }
+        
+        .price-range {
+            width: 100%;
+        }
+        
+        .price-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .shop-content {
+            display: flex;
+        }
+        
+        .products-container {
+            flex: 1;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        
+        .pagination a.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .shop-content {
+                flex-direction: column;
+            }
+            
+            .filter-sidebar {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="luxury-header">
+        <!-- 同首页头部 -->
+    </header>
+
+    <div class="shop-header">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">首页</a></li>
+                    <li>商品</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <main class="shop-page">
+        <div class="container">
+            <div class="shop-toolbar">
+                <h1 class="shop-title">所有商品</h1>
+                <div class="sort-options">
+                    <select class="sort-select">
+                        <option value="default">默认排序</option>
+                        <option value="price-asc">价格从低到高</option>
+                        <option value="price-desc">价格从高到低</option>
+                        <option value="newest">最新商品</option>
+                        <option value="popular">最受欢迎</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="shop-content">
+                <aside class="filter-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">分类</h3>
+                        <ul class="filter-options">
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="category" value="vibrators"> 按摩棒系列
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="category" value="lingerie"> 奢华内衣
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="category" value="couples"> 情侣系列
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="category" value="accessories"> 配件
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">价格范围</h3>
+                        <input type="range" class="price-range" min="0" max="5000" step="100" value="5000">
+                        <div class="price-values">
+                            <span>¥0</span>
+                            <span>¥5000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">特色</h3>
+                        <ul class="filter-options">
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="feature" value="new"> 新品
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="feature" value="sale"> 促销
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="feature" value="bestseller"> 畅销
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn apply-filters">应用筛选</button>
+                </aside>
+                
+                <div class="products-container">
+                    <div class="product-grid">
+                        <!-- 商品将通过JavaScript动态加载 -->
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="luxury-footer">
+        <!-- 同首页页脚 -->
+    </footer>
+
+    <script src="js/shop.js"></script>
+</body>
+</html>
