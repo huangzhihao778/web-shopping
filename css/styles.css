@@ -1,0 +1,341 @@
+/* 基础样式 */
+:root {
+    --primary-color: #8b5f7d;
+    --secondary-color: #d4afb9;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f1f4;
+    --gold-color: #c9b38b;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* 头部样式 */
+.luxury-header {
+    background-color: var(--white);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.header-icons {
+    display: flex;
+}
+
+.header-icons a {
+    color: var(--dark-color);
+    margin-left: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* 英雄区域 */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 分类区域 */
+.categories {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 32px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.category-item {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    text-align: center;
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-item:hover img {
+    transform: scale(1.05);
+}
+
+.category-item h3 {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.category-item .btn-outline {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 商品网格 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--white);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* 页脚样式 */
+.luxury-footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--white);
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.subscribe-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons a {
+    color: var(--white);
+    margin-left: 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+}
